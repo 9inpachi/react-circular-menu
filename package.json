@@ -1,26 +1,26 @@
 {
-  "name": "react-circle-menu",
+  "name": "react-circular-menu",
   "version": "1.0.0",
   "description": "Circle menu component",
-  "main": "./dist/index.js",
+  "main": "./dist/index",
+  "types": "./dist/index",
   "author": "Fawad Ali",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/9inpachi/react-circle-menu#readme",
+  "homepage": "https://github.com/9inpachi/react-circular-menu#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/9inpachi/react-circle-menu.git"
+    "url": "git+https://github.com/9inpachi/react-circular-menu.git"
   },
   "bugs": {
-    "url": "https://github.com/9inpachi/react-circle-menu/issues"
+    "url": "https://github.com/9inpachi/react-circular-menu/issues"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "tsc": "rm -rf ./dist && tsc",
+    "clean": "rm -rf ./dist",
+    "tsc": "tsc",
     "prepublishOnly": "npm run tsc",
-    "dev": "tsc --watch"
+    "dev": "npm run clean && npm run copyStyles && npm run tsc --watch",
+    "build": "npm run clean && npm run copyStyles && npm run tsc",
+    "copyStyles": "copyfiles -u 1 ./src/*.css ./dist"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -28,9 +28,13 @@
     "@types/node": "^14.11.2",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
+    "copyfiles": "^2.3.0",
     "typescript": "^4.0.3"
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

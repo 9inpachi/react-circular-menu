@@ -1,0 +1,114 @@
+/* CircleMenu */
+
+.circle-menu {
+  position: relative;
+}
+
+.circle-menu .circle-menu-backdrop {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 99;
+}
+
+.circle-menu-active .circle-menu-backdrop {
+  display: block;
+  z-index: 99;
+}
+
+.circle-menu-active .circle-menu-data {
+  z-index: 100;
+}
+
+/* MenuToggle */
+
+.circle-menu-toggle {
+  z-index: 200;
+}
+
+.circle-menu-burger-bar {
+  display: block;
+  width: 1.2em;
+  height: 0.2rem;
+  background: #000000;
+  margin-bottom: 0.3em;
+  border-radius: 1em;
+  transition: all 0.5s;
+}
+
+.circle-menu-toggle:hover .circle-menu-burger-bar {
+  background: #ffffff;
+}
+
+.circle-menu-burger-bar:last-child {
+  margin-bottom: 0;
+}
+
+.circle-menu-active .circle-menu-toggle .circle-menu-burger-bar:nth-child(1) {
+  transform: rotateZ(-45deg) translateY(0.15em);
+  width: 1.2em;
+}
+
+.circle-menu-active .circle-menu-toggle .circle-menu-burger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.circle-menu-active .circle-menu-toggle .circle-menu-burger-bar:nth-child(3) {
+  transform: rotateZ(45deg) translateY(-0.15em);
+  width: 1.2em;
+}
+
+@media screen and (max-width: 768px) {
+  .circle-menu-toggle {
+    left: 1em;
+  }
+}
+
+/* MenuItem */
+
+.circle-menu-item {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+}
+
+.circle-menu-item .circle-menu-item-icon {
+  font-size: 1.8em;
+}
+
+.circle-menu-active .circle-menu-item {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* CircleButton */
+
+.circle-button {
+  border: 0.2em solid #000000;
+  color: #000000;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  margin-right: 1em;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  transition: all 0.5s;
+}
+
+.circle-button:last-child {
+  margin-right: 0;
+}
+
+.circle-button:hover {
+  color: #ffffff;
+  background: #000000;
+}

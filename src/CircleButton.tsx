@@ -1,6 +1,5 @@
 import React, { CSSProperties, MouseEvent } from 'react';
 import Tooltip, { TooltipProps } from '@material-ui/core/Tooltip/Tooltip';
-import './index.css';
 
 interface Props {
   size: number,
@@ -13,7 +12,7 @@ interface Props {
   style?: CSSProperties
 };
 
-const CircleButton: React.FC<Props> = (props) => {
+export const CircleButton: React.FC<Props> = (props) => {
   const ButtonTag = props.link ? 'a' : 'div';
 
   return (
@@ -22,7 +21,7 @@ const CircleButton: React.FC<Props> = (props) => {
       <ButtonTag href={props.link}
         target={props.target}
         onClick={props.onClick}
-        className={!props.className ? 'circle-button' : ('circle-button ' + props.className)}
+        className={'circle-button' + (props.className ? ' ' + props.className : '')}
         style={{
           width: props.size + 'em',
           height: props.size + 'em',
@@ -33,5 +32,3 @@ const CircleButton: React.FC<Props> = (props) => {
     </Tooltip>
   );
 };
-
-export default CircleButton;
