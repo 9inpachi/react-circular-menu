@@ -1,0 +1,21 @@
+.circle-menu {
+    position: relative;
+}
+
+.circle-menu .circle-menu-backdrop {
+    display: none;
+}
+
+.circle-menu-active .circle-menu-backdrop {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 99;
+}
+
+.circle-menu-active .circle-menu-data {
+    z-index: 999;
+}
