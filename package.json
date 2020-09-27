@@ -1,7 +1,7 @@
 {
   "name": "react-circular-menu",
   "version": "1.0.0",
-  "description": "Circle menu component",
+  "description": "Circle menu component for React.",
   "main": "./dist/index",
   "types": "./dist/index",
   "author": "Fawad Ali",
@@ -17,8 +17,8 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "tsc": "tsc",
-    "prepublishOnly": "npm run tsc",
-    "dev": "npm run clean && npm run copyStyles && npm run tsc --watch",
+    "prepublishOnly": "npm run build",
+    "dev": "npm run clean && npm run copyStyles && tsc --watch",
     "build": "npm run clean && npm run copyStyles && npm run tsc",
     "copyStyles": "copyfiles -u 1 ./src/*.css ./dist"
   },

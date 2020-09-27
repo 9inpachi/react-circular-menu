@@ -11,7 +11,6 @@
   top: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 99;
 }
 
 .circle-menu-active .circle-menu-backdrop {
@@ -26,6 +25,7 @@
 /* MenuToggle */
 
 .circle-menu-toggle {
+  position: relative;
   z-index: 200;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .circle-menu-active .circle-menu-toggle .circle-menu-burger-bar:nth-child(1) {
-  transform: rotateZ(-45deg) translateY(0.15em);
+  transform: translate(-0.1em, 0.17em) rotateZ(-40deg);
   width: 1.2em;
 }
 
@@ -57,14 +57,8 @@
 }
 
 .circle-menu-active .circle-menu-toggle .circle-menu-burger-bar:nth-child(3) {
-  transform: rotateZ(45deg) translateY(-0.15em);
+  transform: translate(-0.1em, -0.17em) rotateZ(40deg);
   width: 1.2em;
-}
-
-@media screen and (max-width: 768px) {
-  .circle-menu-toggle {
-    left: 1em;
-  }
 }
 
 /* MenuItem */

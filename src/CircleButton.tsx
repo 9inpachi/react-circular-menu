@@ -1,18 +1,18 @@
 import React, { CSSProperties, MouseEvent } from 'react';
 import Tooltip, { TooltipProps } from '@material-ui/core/Tooltip/Tooltip';
 
-interface Props {
+export interface CircleButtonProps {
   size: number,
-  onClick?: (e: MouseEvent<HTMLElement>) => void,
   link?: string,
   tooltip?: string,
   tooltipPlacement?: TooltipProps['placement'],
   target?: string,
   className?: string,
-  style?: CSSProperties
+  style?: CSSProperties,
+  onClick?: (e: MouseEvent<HTMLElement>) => void
 };
 
-export const CircleButton: React.FC<Props> = (props) => {
+export const CircleButton: React.FC<CircleButtonProps> = (props) => {
   const ButtonTag = props.link ? 'a' : 'div';
 
   return (

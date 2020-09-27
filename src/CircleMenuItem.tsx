@@ -1,41 +1,28 @@
-import React, { MouseEvent } from 'react';
-import { TooltipProps } from '@material-ui/core/Tooltip/Tooltip';
-import { CircleButton } from './CircleButton';
+import React from 'react';
+import { CircleButton, CircleButtonProps } from './CircleButton';
 
-export interface CircleMenuItemProps {
-  data: any,
-  size?: number,
-  rotationAngle?: number,
-  menuActive?: boolean,
+export interface CircleMenuItemProps extends CircleButtonProps {
   radius?: number,
-  onClick?: (e: MouseEvent<HTMLElement>) => void,
-  link?: string,
-  tooltip?: string,
-  tooltipPlacement?: TooltipProps['placement'],
-  className?: string
+  menuActive?: boolean,
+  rotationAngle?: number
 };
 
 export const CircleMenuItem: React.FC<CircleMenuItemProps> = ({
-  radius = 1,
   size = 2,
+  radius = 1,
   menuActive = false,
   rotationAngle = 0,
   ...props
 }) => {
-
   const activeTransformStyle: string = `translateY(-50%) rotate(${rotationAngle}deg) translate(${radius}em) rotate(${-rotationAngle}deg)`;
 
   return (
-    <CircleButton className={'circle-menu-item' + (props.className ? (' ' + props.className) : '')}
-      tooltip={props.tooltip}
-      onClick={props.onClick}
-      tooltipPlacement={props.tooltipPlacement}
+    <CircleButton {...props} className={'circle-menu-item' + (props.className ? (' ' + props.className) : '')}
       size={size}
-      link={props.link}
       style={{
         transform: menuActive ? activeTransformStyle : undefined
       }}>
-      {React.cloneElement(props.data, { className: 'circle-menu-item-data' })}
+      {props.children}
     </CircleButton>
   );
 };
