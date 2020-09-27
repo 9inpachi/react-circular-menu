@@ -2,8 +2,8 @@
 
 Circle based menu component for React with custom angle range and any number of menu items.
 
-<div style="text-align: center;">
-  <img alt="React Circular Menu" title="React Circular Menu Example" src="https://user-images.githubusercontent.com/36920441/94361989-a74df100-00d1-11eb-82b3-7f131219a77f.gif">
+<div align="center">
+  <img alt="React Circular Menu" title="React Circular Menu Example" src="https://user-images.githubusercontent.com/36920441/94362361-23493880-00d4-11eb-91df-a3bff8d43d2e.gif">
 </div>
 
 Install the npm package.
