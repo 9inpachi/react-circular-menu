@@ -30,9 +30,12 @@ export const TestMenuComponent = (props) => {
       rotationAngle={360}
       itemSize={2}
       radius={5}
-      // rotationAngleInclusive - Whether to include the ending angle in rotation
-      // because an item at 360deg is the same as an item as 0deg if inclusive
-      // Helps in maintaining a full circle with menu items
+      /**
+       * rotationAngleInclusive (default true)
+       * Whether to include the ending angle in rotation because an
+       * item at 360deg is the same as an item as 0deg if inclusive.
+       * Leave this prop for angles other than 360deg unless otherwise desired.
+       */
       rotationAngleInclusive={false}
     >
       <CircleMenuItem
@@ -55,3 +58,33 @@ export const TestMenuComponent = (props) => {
   );
 };
 ```
+
+## Props
+
+All angles are in degrees.
+
+### CircleMenu
+
+| Prop | Type | Description | Example
+|--|--|--|--|
+| startAngle | number | The angle at which the circle menu starts. That is, the angle at which the first item exists. | -90 |
+| rotationAngle | number | The angle by which the menu is to be rotated. For example, 360 for a complete circle. | 270 |
+| rotationAngleInclusive? | boolean | Whether to include the ending angle in rotation. Because an item at 360 degrees is the same as an item as 0 degree if inclusive. Leave this prop for angles other than 360 degrees unless otherwise desired. | false |
+| radius? | number | Radius of the circle (in em). | 5 |
+| itemSize? | number | Size of the menu toggle and menu items (in em). | 2 |
+
+### CircleMenuItem
+
+| Prop | Type | Description | Example
+|--|--|--|--|
+size? | number | Size of the menu item. Set by `itemSize` of `CircleMenu` component. | 2 |
+link? | string | Link to point to a URL. | https://google.com |
+tooltip? | string | Tooltip of the menu item that appears on hover. | "A Menu Item" |
+tooltipPlacement? | 'bottom-end' \| 'bottom-start' \|  'bottom' \|  'left-end' \|  'left-start' \|  'left' \|  'right-end' \|  'right-start' \|  'right' \|  'top-end' \|  'top-start' \|  'top'; | Placement position of the menu item tooltip. | "top" |
+target? | string | The `target` attribute of anchor tag (`<a target="_blank"></a>`) if `link` prop is set. | "_blank" |
+className? | string | Any extra class name for applying custom styles. | "testClass" |
+style? | CSSProperties | Any extra inline styles for the component. | `{ background: 'red' }` |
+onClick? | (MouseEvent<HTMLElement>) =>  void | Callback when the component is clicked. | `(e) => console.log('Clicked')` |
+| radius? | number | Radius of the menu item from the menu toggle. Set by `CircleMenu` component. | 5 |
+| menuActive? | boolean | Whether the menu and thus the menu item is active or not. Set by `CircleMenu` component. | true |
+| rotationAngle? | number | Rotation angle of the menu item from the `startAngle` of `CircleMenu`. Set by `CircleMenu` component. | true |
