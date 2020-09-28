@@ -25,7 +25,16 @@ import "react-circular-menu/styles.css";
 
 export const TestMenuComponent = (props) => {
   return (
-    <CircleMenu startAngle={-90} rotationAngle={360} itemSize={2} radius={5}>
+    <CircleMenu
+      startAngle={-90}
+      rotationAngle={360}
+      itemSize={2}
+      radius={5}
+      // rotationAngleInclusive - Whether to include the ending angle in rotation
+      // because an item at 360deg is the same as an item as 0deg if inclusive
+      // Helps in maintaining a full circle with menu items
+      rotationAngleInclusive={false}
+    >
       <CircleMenuItem
         onClick={() => alert("Clicked the item")}
         tooltip="Email"

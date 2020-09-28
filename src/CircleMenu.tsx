@@ -5,15 +5,22 @@ import { CircleMenuToggle } from './CircleMenuToggle';
 interface Props {
   startAngle: number,
   rotationAngle: number,
+  rotationAngleInclusive?: boolean,
   radius?: number,
   itemSize?: number
 }
 
-export const CircleMenu: React.FC<Props> = ({ radius = 2, itemSize = 2, ...props }) => {
+export const CircleMenu: React.FC<Props> = ({
+  rotationAngleInclusive = true,
+  radius = 2,
+  itemSize = 2,
+  ...props
+}) => {
 
   const [menuActive, setMenuActive] = useState<boolean>(false);
 
   const childrenCount = React.Children.count(props.children);
+  const itemCount = rotationAngleInclusive ? childrenCount - 1 : childrenCount;
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -29,7 +36,7 @@ export const CircleMenu: React.FC<Props> = ({ radius = 2, itemSize = 2, ...props
           let angle = props.startAngle;
           let increment = 0;
           if (childrenCount > 1) {
-            increment = Math.round(props.rotationAngle / childrenCount);
+            increment = Math.round(props.rotationAngle / itemCount);
           }
           angle += index * increment;
 
