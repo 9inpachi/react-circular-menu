@@ -1,5 +1,8 @@
 # React Circular Menu
 
+[![Version](https://img.shields.io/npm/v/react-circular-menu.svg)](https://www.npmjs.com/package/react-circular-menu)
+[![Downloads](https://img.shields.io/npm/dt/react-circular-menu.svg)](https://www.npmjs.com/package/react-circular-menu)
+
 Circle based menu component for React with custom angle range and any number of menu items.
 
 <div align="center">
