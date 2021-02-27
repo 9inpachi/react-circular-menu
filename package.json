@@ -1,6 +1,6 @@
 {
   "name": "react-circular-menu",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Circle menu component for React.",
   "main": "./dist/index",
   "types": "./dist/index",
@@ -31,6 +31,7 @@
     "extends": "react-app"
   },
   "files": [
-    "dist"
+    "dist",
+    "styles.css"
   ]
 }
