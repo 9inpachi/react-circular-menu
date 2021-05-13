@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import { Children, FC, ReactElement, useState } from 'react';
 import { CircleMenuItem, CircleMenuItemProps } from './CircleMenuItem';
 import { CircleMenuToggle } from './CircleMenuToggle';
 
@@ -10,7 +10,7 @@ interface Props {
   itemSize?: number
 }
 
-export const CircleMenu: React.FC<Props> = ({
+export const CircleMenu: FC<Props> = ({
   rotationAngleInclusive = true,
   radius = 2,
   itemSize = 2,
@@ -19,7 +19,7 @@ export const CircleMenu: React.FC<Props> = ({
 
   const [menuActive, setMenuActive] = useState<boolean>(false);
 
-  const childrenCount = React.Children.count(props.children);
+  const childrenCount = Children.count(props.children);
   const itemCount = rotationAngleInclusive ? childrenCount - 1 : childrenCount;
 
   const toggleMenu = () => {
@@ -31,7 +31,7 @@ export const CircleMenu: React.FC<Props> = ({
       <div className='circle-menu-backdrop' onClick={toggleMenu}></div>
       <CircleMenuToggle size={itemSize} toggleMenu={toggleMenu} />
       <div className='circle-menu-data'>
-        {React.Children.map(props.children, (child, index: number) => {
+        {Children.map(props.children, (child, index: number) => {
           // Calculating angle
           let angle = props.startAngle;
           let increment = 0;

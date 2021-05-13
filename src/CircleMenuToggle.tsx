@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { CircleButton } from './CircleButton';
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   toggleMenu: () => void
 }
 
-export const CircleMenuToggle: React.FC<Props> = ({ size = 1, ...props }) => {
+export const CircleMenuToggle: FC<Props> = ({ size = 1, ...props }) => {
   return (
     <CircleButton
       onClick={props.toggleMenu}
