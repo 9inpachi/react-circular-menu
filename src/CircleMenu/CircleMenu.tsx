@@ -1,6 +1,6 @@
 import { Children, FC, ReactElement, useState } from 'react';
 import { CircleMenuItem, CircleMenuItemProps } from '../CircleMenuItem/CircleMenuItem';
-import { CircleMenuToggle } from '../CircleMenuToggle';
+import { CircleMenuToggle } from '../CircleMenuToggle/CircleMenuToggle';
 import { StyledCircleBackdrop, StyledCircleMenu, StyledCircleMenuData } from './StyledCircleMenu';
 
 interface Props {
@@ -30,7 +30,7 @@ export const CircleMenu: FC<Props> = ({
   return (
     <StyledCircleMenu>
       <StyledCircleBackdrop menuActive={menuActive} onClick={toggleMenu} />
-      <CircleMenuToggle size={itemSize} toggleMenu={toggleMenu} />
+      <CircleMenuToggle menuActive={menuActive} size={itemSize} toggleMenu={toggleMenu} />
       <StyledCircleMenuData menuActive={menuActive}>
         {Children.map(props.children, (child, index: number) => {
           // Calculating angle

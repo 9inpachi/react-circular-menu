@@ -36,24 +36,3 @@
   transform: translate(-0.1em, -0.17em) rotateZ(40deg);
   width: 1.2em;
 }
-
-/* MenuItem */
-
-.circle-menu-item {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #ffffff;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 100;
-}
-
-.circle-menu-item .circle-menu-item-icon {
-  font-size: 1.8em;
-}
-
-.circle-menu-active .circle-menu-item {
-  visibility: visible;
-  opacity: 1;
-}

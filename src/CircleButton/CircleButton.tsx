@@ -15,19 +15,19 @@ export interface CircleButtonProps {
 };
 
 export const CircleButton: FC<CircleButtonProps> = (props) => {
-  const { link, tooltip, tooltipPlacement, onClick, className, size, style, children } = props;
-  const ButtonTag: StyledComponent<'a' | 'button', any> = link ? StyledLink : StyledButton;
+  const { link, target, tooltip, tooltipPlacement, onClick, className, size, style, children } = props;
+  const ButtonTag: StyledComponent<any, any> = link ? StyledLink : StyledButton;
 
   return (
     <Tooltip title={tooltip ?? ''} placement={tooltipPlacement}>
       <ButtonTag
+        href={link}
+        target={target}
         onClick={onClick}
         className={className}
-        style={{
-          width: size + 'em',
-          height: size + 'em',
-          ...style
-        }}>
+        size={size}
+        style={style}
+      >
         {children}
       </ButtonTag>
     </Tooltip>

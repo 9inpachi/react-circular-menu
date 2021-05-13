@@ -12,8 +12,7 @@
     "url": "git+https://github.com/9inpachi/react-circular-menu.git"
   },
   "files": [
-    "dist",
-    "styles.css"
+    "dist"
   ],
   "bugs": {
     "url": "https://github.com/9inpachi/react-circular-menu/issues"
