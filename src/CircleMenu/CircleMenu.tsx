@@ -1,5 +1,5 @@
 import { Children, FC, ReactElement, useState } from 'react';
-import { CircleMenuItem, CircleMenuItemProps } from '../CircleMenuItem';
+import { CircleMenuItem, CircleMenuItemProps } from '../CircleMenuItem/CircleMenuItem';
 import { CircleMenuToggle } from '../CircleMenuToggle';
 import { StyledCircleBackdrop, StyledCircleMenu, StyledCircleMenuData } from './StyledCircleMenu';
 
