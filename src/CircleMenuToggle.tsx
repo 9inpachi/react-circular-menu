@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { CircleButton } from './CircleButton';
+import { CircleButton } from './CircleButton/CircleButton';
 
 interface Props {
   size: number,

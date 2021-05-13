@@ -1,27 +1,3 @@
-/* CircleMenu */
-
-.circle-menu {
-  position: relative;
-}
-
-.circle-menu .circle-menu-backdrop {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-}
-
-.circle-menu-active .circle-menu-backdrop {
-  display: block;
-  z-index: 99;
-}
-
-.circle-menu-active .circle-menu-data {
-  z-index: 100;
-}
-
 /* MenuToggle */
 
 .circle-menu-toggle {

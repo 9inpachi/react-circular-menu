@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { CircleButton, CircleButtonProps } from './CircleButton';
+import { CircleButton, CircleButtonProps } from './CircleButton/CircleButton';
 
 export interface CircleMenuItemProps extends CircleButtonProps {
   radius?: number,
