@@ -24,7 +24,6 @@ import MapIcon from "@material-ui/icons/Map";
 
 // Import the circular menu
 import { CircleMenu, CircleMenuItem } from "react-circular-menu";
-import "react-circular-menu/styles.css";
 
 export const TestMenuComponent = (props) => {
   return (

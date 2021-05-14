@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { CircleButton } from "../CircleButton/CircleButton";
 
 interface Props {
@@ -17,8 +17,7 @@ export const StyledCircleButton = styled(CircleButton)<Props>`
   z-index: 100;
 
   ${({ menuActive, rotationAngle, radius }) =>
-    menuActive &&
-    css`
+    menuActive && `
       transform: translateY(-50%) rotate(${rotationAngle}deg)
         translate(${radius}em) rotate(${-rotationAngle}deg);
       visibility: visible;

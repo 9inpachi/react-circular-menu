@@ -9,25 +9,15 @@ export const StyledCircleMenu = styled.div`
 `;
 
 export const StyledCircleBackdrop = styled.div<StyleProps>`
-  display: none;
+  display: ${props => props.menuActive ? 'block' : 'none'};
   position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
   width: 100vw;
-
-  ${(props) =>
-    props.menuActive &&
-    css`
-      display: block;
-      z-index: 99;
-    `}
+  z-index: 99;
 `;
 
 export const StyledCircleMenuData = styled.div<StyleProps>`
-  ${(props) =>
-    props.menuActive &&
-    css`
-      z-index: 100;
-    `}
+  z-index:${props => props.menuActive && '100'}
 `;
