@@ -1,7 +1,7 @@
 import { CSSProperties, FC, MouseEvent } from 'react';
 import Tooltip, { TooltipProps } from '@material-ui/core/Tooltip/Tooltip';
 import { StyledButton, StyledLink } from './StyledCircleButton';
-import { clickA11yProps } from '../helpers/clickA11y';
+import { buttonA11yProps } from '../helpers/buttonA11yProps';
 
 export interface CircleButtonProps {
   size: number;
@@ -25,7 +25,7 @@ export const CircleButton: FC<CircleButtonProps> = (props) => {
         : <StyledButton
           {...commonProps}
           onClick={onClick}
-          {...(onClick ? clickA11yProps(onClick) : undefined)}
+          {...(onClick ? buttonA11yProps(onClick) : undefined)}
         >
           {children}
         </StyledButton>}

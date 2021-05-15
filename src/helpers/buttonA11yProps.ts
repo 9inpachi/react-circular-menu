@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
 
-export const clickA11yProps = (onClick: () => void): HTMLAttributes<HTMLDivElement> => ({
+export const buttonA11yProps = (onClick: () => void): HTMLAttributes<HTMLDivElement> => ({
   role: 'button',
   tabIndex: 0,
   onKeyPress: (keyboardEvent) => {

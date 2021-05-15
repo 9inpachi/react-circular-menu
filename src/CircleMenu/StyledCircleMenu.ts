@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 interface StyleProps {
   menuActive: boolean;
@@ -19,5 +19,5 @@ export const StyledCircleBackdrop = styled.div<StyleProps>`
 `;
 
 export const StyledCircleMenuData = styled.div<StyleProps>`
-  z-index:${props => props.menuActive && '100'}
+  z-index: ${props => props.menuActive && '100'}
 `;
