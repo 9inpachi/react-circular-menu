@@ -13,6 +13,16 @@ Install the npm package.
 
 ```bash
 npm install react-circular-menu
+# or
+yarn add react-circular-menu
+```
+
+Install external dependencies `styled-components` and `@material-ui/core` if you don't already have them.
+
+```bash
+npm install styled-components @material-ui/core
+# or
+yarn add styled-components @material-ui/core
 ```
 
 ## Example

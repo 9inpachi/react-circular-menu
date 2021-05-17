@@ -25,7 +25,7 @@ export const CircleButton: FC<CircleButtonProps> = (props) => {
         : <StyledButton
           {...commonProps}
           onClick={onClick}
-          {...(onClick ? buttonA11yProps(onClick) : undefined)}
+          {...(onClick && buttonA11yProps(onClick))}
         >
           {children}
         </StyledButton>}
