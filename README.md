@@ -84,6 +84,7 @@ All angles are in degrees.
 | rotationAngleInclusive? | boolean | Whether to include the ending angle in rotation. Because an item at 360 degrees is the same as an item at 0 degree if inclusive. Leave this prop for angles other than 360 degrees unless otherwise desired. | false |
 | radius? | number | Radius of the circle (in em). | 5 |
 | itemSize? | number | Size of the menu toggle and menu items (in em). | 2 |
+| onMenuToggle? | (menuActive: boolean) => void | Callback called on toggling the menu. | (menuActive) => console.log(menuActive) |
 
 ### CircleMenuItem
 

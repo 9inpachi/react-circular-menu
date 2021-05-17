@@ -8,23 +8,24 @@ interface Props {
   rotationAngle: number,
   rotationAngleInclusive?: boolean,
   radius?: number,
-  itemSize?: number
+  itemSize?: number,
+  onMenuToggle?: (toggleState: boolean) => void
 }
 
 export const CircleMenu: FC<Props> = ({
   rotationAngleInclusive = true,
   radius = 2,
   itemSize = 2,
+  onMenuToggle,
   ...props
 }) => {
-
   const [menuActive, setMenuActive] = useState<boolean>(false);
-
   const childrenCount = Children.count(props.children);
   const itemCount = rotationAngleInclusive ? childrenCount - 1 : childrenCount;
-
   const toggleMenu = () => {
-    setMenuActive(!menuActive);
+    const updatedMenuState = !menuActive;
+    setMenuActive(updatedMenuState);
+    onMenuToggle?.(updatedMenuState);
   };
 
   return (
