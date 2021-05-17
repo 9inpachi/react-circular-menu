@@ -1,4 +1,4 @@
-import { CSSProperties, FC, MouseEvent } from 'react';
+import React, { CSSProperties, FC, MouseEvent } from 'react';
 import Tooltip, { TooltipProps } from '@material-ui/core/Tooltip/Tooltip';
 import { StyledButton, StyledLink } from './StyledCircleButton';
 import { buttonA11yProps } from '../helpers/buttonA11yProps';

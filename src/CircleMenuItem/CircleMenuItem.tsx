@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { CircleButtonProps } from '../CircleButton/CircleButton';
 import { StyledCircleButton } from './StyledCircleMenuItem';
 
