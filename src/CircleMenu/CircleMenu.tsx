@@ -9,6 +9,8 @@ interface Props {
   rotationAngleInclusive?: boolean,
   radius?: number,
   itemSize?: number,
+  className?: string,
+  menuToggleClassName?: string,
   onMenuToggle?: (toggleState: boolean) => void
 }
 
@@ -16,6 +18,8 @@ export const CircleMenu: FC<Props> = ({
   rotationAngleInclusive = true,
   radius = 2,
   itemSize = 2,
+  className,
+  menuToggleClassName,
   onMenuToggle,
   ...props
 }) => {
@@ -29,9 +33,14 @@ export const CircleMenu: FC<Props> = ({
   };
 
   return (
-    <StyledCircleMenu>
+    <StyledCircleMenu className={className}>
       <StyledCircleBackdrop menuActive={menuActive} onClick={toggleMenu} />
-      <CircleMenuToggle menuActive={menuActive} size={itemSize} toggleMenu={toggleMenu} />
+      <CircleMenuToggle
+        className={menuToggleClassName}
+        menuActive={menuActive}
+        size={itemSize}
+        toggleMenu={toggleMenu}
+      />
       <StyledCircleMenuData menuActive={menuActive}>
         {Children.map(props.children, (child, index: number) => {
           // Calculating angle

@@ -5,19 +5,22 @@ import {
 } from "./StyledCircleMenuToggle";
 
 interface Props {
-  size: number;
-  menuActive: boolean;
-  toggleMenu: () => void;
+  size: number,
+  menuActive: boolean,
+  toggleMenu: () => void,
+  className?: string
 }
 
 export const CircleMenuToggle: FC<Props> = ({
   size = 1,
   menuActive = false,
-  ...props
+  className,
+  toggleMenu
 }) => {
   return (
     <StyledCircleMenuToggle
-      onClick={props.toggleMenu}
+      className={className}
+      onClick={toggleMenu}
       menuActive={menuActive}
       size={size}
     >
