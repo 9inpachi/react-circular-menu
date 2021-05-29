@@ -2,7 +2,8 @@ import React, { FC } from 'react';
 import { CircleButtonProps } from '../CircleButton/CircleButton';
 import { StyledCircleButton } from './StyledCircleMenuItem';
 
-export interface CircleMenuItemProps extends CircleButtonProps {
+export interface CircleMenuItemProps extends Omit<CircleButtonProps, 'size'> {
+  size?: number,
   radius?: number,
   menuActive?: boolean,
   rotationAngle?: number

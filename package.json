@@ -20,9 +20,9 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "tsc": "tsc",
-    "prepublishOnly": "npm run build",
-    "dev": "npm run clean && tsc --watch",
-    "build": "npm run clean && npm run tsc"
+    "prepublishOnly": "yarn build",
+    "dev": "yarn clean && tsc --watch",
+    "build": "yarn clean && yarn tsc"
   },
   "peerDependencies": {
     "@material-ui/core": ">= 4",
