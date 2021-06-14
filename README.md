@@ -11,6 +11,8 @@ Demo: [https://9inpachi.github.io/react-circular-menu](https://9inpachi.github.i
   <img alt="React Circular Menu" title="React Circular Menu Example" src="https://user-images.githubusercontent.com/36920441/94362361-23493880-00d4-11eb-91df-a3bff8d43d2e.gif">
 </div>
 
+## Setup
+
 Install the npm package.
 
 ```bash
@@ -79,29 +81,120 @@ All angles are in degrees.
 
 ### CircleMenu
 
-| Prop | Type | Description | Example
-|--|--|--|--|
-| startAngle | number | The angle at which the circle menu starts. That is, the angle at which the first item exists. | -90 |
-| rotationAngle | number | The angle by which the menu is to be rotated. For example, 360 for a complete circle. | 270 |
-| rotationAngleInclusive? | boolean | Whether to include the ending angle in rotation. Because an item at 360 degrees is the same as an item at 0 degree if inclusive. Leave this prop for angles other than 360 degrees unless otherwise desired. | false |
-| radius? | number | Radius of the circle (in em). | 5 |
-| itemSize? | number | Size of the menu toggle and menu items (in em). | 2 |
-| className? | string | Class name to apply custom styles to circle menu wrapper. | "testClass" |
-| menuToggleClassName? | string | Class name to apply custom styles to circle menu toggle. | "testClass" |
-| onMenuToggle? | (menuActive: boolean) => void | Callback called on toggling the menu. | (menuActive) => console.log(menuActive) |
+#### `startAngle: number`
+
+The angle at which the circle menu starts. That is, the angle at which the first item exists.
+
+Example: `-90`
+
+#### `rotationAngle: number`
+
+The angle by which the menu is to be rotated. For example, 360 for a complete circle.
+
+Example: `270`
+
+#### `rotationAngleInclusive?: boolean`
+
+Whether to include the ending angle in rotation. Because an item at 360 degrees is the same as an item at 0 degree if inclusive. Leave this prop for angles other than 360 degrees unless otherwise desired.
+
+Example: `false`
+
+#### `radius?: number`
+
+Radius of the circle (in em).
+
+Example: `5`
+
+#### `itemSize?: number`
+
+Size of the menu toggle and menu items (in em).
+
+Example: `2`
+
+#### `className?: string`
+
+Class name to apply custom styles to circle menu wrapper.
+
+Example: `testClass`
+
+#### `menuToggleClassName?: string`
+
+Class name to apply custom styles to circle menu toggle.
+
+Example: `testClass`
+
+#### `onMenuToggle?: (menuActive: boolean) => void`
+
+Callback called on toggling the menu.
+
+Example:
+
+```js
+(menuActive) => console.log(menuActive)
+```
 
 ### CircleMenuItem
 
-| Prop | Type | Description | Example
-|--|--|--|--|
-size? | number | Size of the menu item. Set by `itemSize` of `CircleMenu` component. | 2 |
-link? | string | Link to point to a URL. | https://google.com |
-tooltip? | string | Tooltip of the menu item that appears on hover. | "A Menu Item" |
-tooltipPlacement? | 'bottom-end' \| 'bottom-start' \|  'bottom' \|  'left-end' \|  'left-start' \|  'left' \|  'right-end' \|  'right-start' \|  'right' \|  'top-end' \|  'top-start' \|  'top' | Placement position of the menu item tooltip. | "top" |
-target? | string | The `target` attribute of anchor tag (`<a target="_blank"></a>`) if `link` prop is set. | "_blank" |
-className? | string | Any extra class name for applying custom styles. | "testClass" |
-style? | CSSProperties | Any extra inline styles for the component. | `{ background: 'red' }` |
-onClick? | (MouseEvent<HTMLElement>) =>  void | Callback when the component is clicked. | `(e) => console.log('Clicked')` |
-| radius? | number | Radius of the menu item from the menu toggle. Set by `CircleMenu` component. | 5 |
-| menuActive? | boolean | Whether the menu and thus the menu item is active or not. Set by `CircleMenu` component. | true |
-| rotationAngle? | number | Rotation angle of the menu item from the `startAngle` of `CircleMenu`. Set by `CircleMenu` component. | true |
+#### `size?: number`
+
+Size of the menu item. Set by `itemSize` of `CircleMenu` component.
+
+Example: `2`
+
+#### `link?: string`
+
+Link to point to a URL.
+
+Example: `https://google.com`
+
+#### `tooltipPlacement?: 'bottom-end' | 'bottom-start' | 'bottom' | 'left-end' | 'left-start' | 'left' | 'right-end' | 'right-start' | 'right' | 'top-end' | 'top-start' | 'top'`
+
+Placement position of the menu item tooltip.
+
+Example: `top`
+
+#### `target?: string`
+
+The `target` attribute of anchor tag (`<a target="_blank"></a>`) if link prop is set.
+
+Example: `_blank`
+
+#### `className?: string`
+
+Extra class name for applying custom styles.
+
+Example: `testClass`
+
+#### `style?: CSSProperties`
+
+Extra inline styles for the component.
+
+Example: `{ background: 'red' }`
+
+#### `onClick?: (event: MouseEvent) => void`
+
+Callback when the component is clicked.
+
+Example:
+
+```js
+(event) => console.log('Clicked')
+```
+
+#### `radius?: number`
+
+Radius of the menu item from the menu toggle. Set by `CircleMenu` component.
+
+Example: `5`
+
+#### `menuActive?: boolean`
+
+Whether the menu and thus the menu item is active or not. Set by `CircleMenu` component.
+
+Example: `true`
+
+#### `rotationAngle?: number`
+
+Rotation angle in degrees of the menu item from the `startAngle` of `CircleMenu`. Set by `CircleMenu` component.
+
+Example: `90`
