@@ -11,6 +11,14 @@ Demo: [https://9inpachi.github.io/react-circular-menu](https://9inpachi.github.i
   <img alt="React Circular Menu" title="React Circular Menu Example" src="https://user-images.githubusercontent.com/36920441/94362361-23493880-00d4-11eb-91df-a3bff8d43d2e.gif">
 </div>
 
+## Table of Contents
+
+- [Setup](#setup)
+- [Example](#example)
+- [Props](#props)
+  - [CircleMenu](#circlemenu)
+  - [CircleMenuItem](#circlemenuitem)
+
 ## Setup
 
 Install the npm package.
@@ -81,6 +89,15 @@ All angles are in degrees.
 
 ### CircleMenu
 
+- [`startAngle: number`](#startangle-number)
+- [`rotationAngle: number`](#rotationangle-number)
+- [`rotationAngleInclusive?: boolean`](#rotationangleinclusive-boolean)
+- [`radius?: number`](#radius-number)
+- [`itemSize?: number`](#itemsize-number)
+- [`className?: string`](#classname-string)
+- [`menuToggleClassName?: string`](#menutoggleclassname-string)
+- [`onMenuToggle?: (menuActive: boolean) => void`](#onmenutoggle-menuactive-boolean--void)
+
 #### `startAngle: number`
 
 The angle at which the circle menu starts. That is, the angle at which the first item exists.
@@ -130,10 +147,20 @@ Callback called on toggling the menu.
 Example:
 
 ```js
-(menuActive) => console.log(menuActive)
+(menuActive) => console.log(menuActive);
 ```
 
 ### CircleMenuItem
+
+- [`size?: number`](#size-number)
+- [`link?: string`](#link-string)
+- [`tooltipPlacement?: 'bottom-end' | 'bottom-start' | 'bottom' | 'left-end' | 'left-start' | 'left' | 'right-end' | 'right-start' | 'right' | 'top-end' | 'top-start' | 'top'`](#tooltipplacement-bottom-end--bottom-start--bottom--left-end--left-start--left--right-end--right-start--right--top-end--top-start--top)
+- [`target?: string`](#target-string)
+- [`className?: string`](#classname-string-1)
+- [`style?: CSSProperties`](#style-cssproperties)
+- [`onClick?: (event: MouseEvent) => void`](#onclick-event-mouseevent--void)
+- [`radius?: number`](#radius-number-1)
+- [`menuActive?: boolean`](#menuactive-boolean)
 
 #### `size?: number`
 
@@ -178,7 +205,7 @@ Callback when the component is clicked.
 Example:
 
 ```js
-(event) => console.log('Clicked')
+(event) => console.log("Clicked");
 ```
 
 #### `radius?: number`
