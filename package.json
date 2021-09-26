@@ -1,6 +1,6 @@
 {
   "name": "react-circular-menu",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Circle menu component for React.",
   "main": "./dist/index",
   "types": "./dist/index",
@@ -30,12 +30,12 @@
     "styled-components": ">= 4"
   },
   "devDependencies": {
-    "@material-ui/core": "^4.11.4",
-    "@types/node": "^15.0.3",
-    "@types/react": "^17.0.5",
-    "@types/styled-components": "^5.1.9",
-    "styled-components": "^5.3.0",
-    "typescript": "^4.2.4"
+    "@material-ui/core": "^4.12.3",
+    "@types/node": "^16.10.1",
+    "@types/react": "^17.0.24",
+    "@types/styled-components": "^5.1.14",
+    "styled-components": "^5.3.1",
+    "typescript": "^4.4.3"
   },
   "eslintConfig": {
     "extends": "react-app"
