@@ -87,6 +87,9 @@ export const TestMenuComponent = (props) => {
 
 All angles are in degrees.
 
+- [CircleMenu](#circlemenu)
+- [CircleMenuItem](#circlemenuitem)
+
 ### CircleMenu
 
 - [`startAngle: number`](#startangle-number)
