@@ -98,6 +98,7 @@ All angles are in degrees.
 - [`radius?: number`](#radius-number)
 - [`itemSize?: number`](#itemsize-number)
 - [`className?: string`](#classname-string)
+- [`menuToggleElement?: ReactElement`](#menutoggleelement-reactelement)
 - [`menuToggleClassName?: string`](#menutoggleclassname-string)
 - [`onMenuToggle?: (menuActive: boolean) => void`](#onmenutoggle-menuactive-boolean--void)
 
@@ -136,6 +137,12 @@ Example: `2`
 Class name to apply custom styles to circle menu wrapper.
 
 Example: `testClass`
+
+#### `menuToggleElement?: ReactElement`
+
+Custom element for the menu toggle.
+
+Example: `<button>Toggle Menu</button>`
 
 #### `menuToggleClassName?: string`
 
