@@ -19,7 +19,7 @@ export const StyledCircleButton = styled(CircleButton)<Props>`
   ${({ menuActive, rotationAngle, radius }) =>
     menuActive && `
       transform: translateY(-50%) rotate(${rotationAngle}deg)
-        translate(${radius}em) rotate(${-rotationAngle}deg);
+        translate(${radius}rem) rotate(${-rotationAngle}deg);
       visibility: visible;
       opacity: 1;
     `}
