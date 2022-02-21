@@ -1,13 +1,13 @@
 import React, { CSSProperties, FC, MouseEvent } from 'react';
-import Tooltip, { TooltipProps } from '@material-ui/core/Tooltip/Tooltip';
 import { StyledButton, StyledLink } from './StyledCircleButton';
-import { buttonA11yProps } from '../helpers/buttonA11yProps';
+import { Tooltip } from "../Tooltip/Tooltip"
+import { TooltipPlacement } from '../Tooltip/library/types';
 
 export interface CircleButtonProps {
   size: number;
   link?: string;
   tooltip?: string;
-  tooltipPlacement?: TooltipProps['placement'];
+  tooltipPlacement?: TooltipPlacement;
   target?: string;
   className?: string;
   style?: CSSProperties;
@@ -25,7 +25,6 @@ export const CircleButton: FC<CircleButtonProps> = (props) => {
         : <StyledButton
           {...commonProps}
           onClick={onClick}
-          {...(onClick && buttonA11yProps(onClick))}
         >
           {children}
         </StyledButton>}
