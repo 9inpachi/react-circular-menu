@@ -20,7 +20,7 @@ export const CircleMenuItem: FC<CircleMenuItemProps> = ({
   <StyledCircleButton
     {...props}
     size={size}
-    radius={radius}
+    $radius={radius}
     menuActive={menuActive}
     rotationAngle={rotationAngle}
   >

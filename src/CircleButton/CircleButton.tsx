@@ -1,33 +1,36 @@
-import React, { CSSProperties, FC, MouseEvent } from 'react';
-import { StyledButton, StyledLink } from './StyledCircleButton';
-import { Tooltip } from "../Tooltip/Tooltip"
-import { TooltipPlacement } from '../Tooltip/library/types';
+import React, { CSSProperties, FC, MouseEvent } from "react";
+import { StyledButton, StyledLink } from "./StyledCircleButton";
+import Tooltip, { TooltipProps } from "@material-ui/core/Tooltip/Tooltip";
 
 export interface CircleButtonProps {
   size: number;
   link?: string;
   tooltip?: string;
-  tooltipPlacement?: TooltipPlacement;
+  tooltipPlacement?: TooltipProps["placement"];
   target?: string;
   className?: string;
   style?: CSSProperties;
-  onClick?: (e?: MouseEvent<HTMLElement>) => void
-};
+  onClick?: (e?: MouseEvent<HTMLElement>) => void;
+}
 
 export const CircleButton: FC<CircleButtonProps> = (props) => {
-  const { link, target, tooltip, tooltipPlacement, onClick, className, size, style, children } = props;
-  const commonProps = { className, size, style };
+  const {
+    link,
+    target,
+    tooltip,
+    tooltipPlacement,
+    onClick,
+    size,
+    ...commonProps
+  } = props;
 
   return (
-    <Tooltip title={tooltip ?? ''} placement={tooltipPlacement}>
-      {link
-        ? <StyledLink {...commonProps} href={link} target={target}>{children}</StyledLink>
-        : <StyledButton
-          {...commonProps}
-          onClick={onClick}
-        >
-          {children}
-        </StyledButton>}
+    <Tooltip title={tooltip ?? ""} placement={tooltipPlacement}>
+      {link ? (
+        <StyledLink {...commonProps} $size={size} href={link} target={target} />
+      ) : (
+        <StyledButton {...commonProps} $size={size} onClick={onClick} />
+      )}
     </Tooltip>
   );
 };

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface Props {
-  size: number;
+  $size: number;
 }
 
 export const StyledCircleButton = <T extends 'a' | 'button'>(tag: T) => styled(tag) <Props>`
@@ -18,9 +18,9 @@ export const StyledCircleButton = <T extends 'a' | 'button'>(tag: T) => styled(t
   box-sizing: unset;
   padding: 0.5rem;
   transition: all 0.5s;
-  ${({ size }) => `
-    width: ${size}rem;
-    height: ${size}rem;
+  ${({ $size }) => `
+    width: ${$size}rem;
+    height: ${$size}rem;
   `}
 
   &:hover {
