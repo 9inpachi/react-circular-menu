@@ -7,13 +7,15 @@ export interface TooltipProps {
   placement?: TooltipPlacement;
 }
 
-export const Tooltip: FC<TooltipProps> = ({ title, placement, children }) => {
-  return (
+export const Tooltip: FC<TooltipProps> = ({ title, placement = TooltipPlacement.Top, children }) => {
+  return title ? (
     <StyledTooltipWrapper>
-      <StyledTooltip role="tooltip" placement={placement}>
+      <StyledTooltip role="tooltip" $placement={placement}>
         {title}
       </StyledTooltip>
       {children}
     </StyledTooltipWrapper>
+  ) : (
+    <>{children}</>
   );
 };
