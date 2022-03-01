@@ -5,16 +5,13 @@ import React, {
   ReactElement,
   useState,
 } from "react";
+import { Backdrop } from "../Backdrop/Backdrop";
 import {
   CircleMenuItem,
   CircleMenuItemProps,
 } from "../CircleMenuItem/CircleMenuItem";
 import { CircleMenuToggle } from "../CircleMenuToggle/CircleMenuToggle";
-import {
-  StyledCircleBackdrop,
-  StyledCircleMenu,
-  StyledCircleMenuData,
-} from "./StyledCircleMenu";
+import { StyledCircleMenuData } from "./StyledCircleMenu";
 
 interface Props {
   startAngle: number;
@@ -59,10 +56,9 @@ export const CircleMenu: FC<Props> = ({
   );
 
   return (
-    <StyledCircleMenu className={className}>
-      <StyledCircleBackdrop menuActive={menuActive} onClick={toggleMenu} />
+    <Backdrop className={className} active={menuActive} onClick={toggleMenu}>
       {menuToggle}
-      <StyledCircleMenuData menuActive={menuActive}>
+      <StyledCircleMenuData>
         {Children.map(props.children, (child, index: number) => {
           // Calculating angle
           let angle = props.startAngle;
@@ -84,6 +80,6 @@ export const CircleMenu: FC<Props> = ({
           );
         })}
       </StyledCircleMenuData>
-    </StyledCircleMenu>
+    </Backdrop>
   );
 };

@@ -14,7 +14,6 @@ export const StyledTooltip = styled.div<StyleTooltipProps>`
   border-radius: 0.3rem;
   color: #ffffff;
   padding: 0.25em 0.5em;
-  z-index: 300;
 
   ${({ $placement }) => mapPlacementToStyleProp($placement)}: 110%;
 
