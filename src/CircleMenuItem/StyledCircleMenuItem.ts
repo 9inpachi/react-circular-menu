@@ -6,7 +6,7 @@ interface Props {
   $radius: number;
 }
 
-export const StyledCircleMenuItem = styled.div<Props>`
+export const StyledCircleMenuItem = styled.li<Props>`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

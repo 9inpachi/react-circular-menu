@@ -12,7 +12,6 @@ export const StyledCircleButton = <T extends 'a' | 'button'>(tag: T) => styled(t
   border-radius: 50%;
   cursor: pointer;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   box-sizing: unset;

@@ -21,6 +21,7 @@ interface Props {
 
 export const StyledCircleMenuToggle = styled(CircleButton)<Props>`
   position: relative;
+  flex-direction: column;
   z-index: 200;
 
   &:hover ${StyledCircleMenuBurgerBar} {

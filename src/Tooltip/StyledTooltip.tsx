@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { mapPlacementToStyleProp } from "./functions/map-tooltip-placement";
 import { TooltipPlacement } from "./library/types";
 
@@ -14,18 +14,21 @@ export const StyledTooltip = styled.div<StyleTooltipProps>`
   border-radius: 0.3rem;
   color: #ffffff;
   padding: 0.25em 0.5em;
+  z-index: 300;
 
   ${({ $placement }) => mapPlacementToStyleProp($placement)}: 110%;
 
   ${({ $placement }) => {
     switch ($placement) {
-      case TooltipPlacement.Top || TooltipPlacement.Bottom:
-        return css`
+      case TooltipPlacement.Top:
+      case TooltipPlacement.Bottom:
+        return `
           left: 50%;
           transform: translateX(-50%);
         `;
-      case TooltipPlacement.Left || TooltipPlacement.Right:
-        return css`
+      case TooltipPlacement.Left:
+      case TooltipPlacement.Right:
+        return `
           top: 50%;
           transform: translateY(-50%);
         `;

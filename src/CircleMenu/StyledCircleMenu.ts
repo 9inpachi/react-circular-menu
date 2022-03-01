@@ -18,6 +18,9 @@ export const StyledCircleBackdrop = styled.div<StyleProps>`
   z-index: 99;
 `;
 
-export const StyledCircleMenuData = styled.div<StyleProps>`
-  z-index: ${props => props.menuActive && '100'}
+export const StyledCircleMenuData = styled.ul<StyleProps>`
+  ${props => props.menuActive && 'z-index: 100;'};
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 `;
