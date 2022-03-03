@@ -15,6 +15,10 @@ export const StyledTooltip = styled.div<StyleTooltipProps>`
   color: #ffffff;
   padding: 0.25em 0.5em;
 
+  .tooltip-element:is(:hover, :focus, :active) + & {
+    display: unset;
+  }
+
   ${({ $placement }) => mapPlacementToStyleProp($placement)}: 110%;
 
   ${({ $placement }) => {
@@ -39,7 +43,7 @@ export const StyledTooltipWrapper = styled.div`
   position: relative;
   display: inline-flex;
 
-  &:hover > ${StyledTooltip} {
-    display: unset;
-  }
+  // &:hover > ${StyledTooltip} {
+  //   display: unset;
+  // }
 `;

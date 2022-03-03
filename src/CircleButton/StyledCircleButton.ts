@@ -1,10 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface Props {
   $size: number;
 }
 
-export const StyledCircleButton = <T extends 'a' | 'button'>(tag: T) => styled(tag) <Props>`
+export const StyledCircleButton = <T extends "a" | "button">(tag: T) => styled(
+  tag
+)<Props>`
   border: 0.2rem solid #000000;
   background: none;
   text-decoration: none;
@@ -22,11 +24,11 @@ export const StyledCircleButton = <T extends 'a' | 'button'>(tag: T) => styled(t
     height: ${$size}rem;
   `}
 
-  &:hover {
+  &:is(:hover, :focus, :active) {
     color: #ffffff;
     background: #000000;
   }
 `;
 
-export const StyledButton = StyledCircleButton('button');
-export const StyledLink = StyledCircleButton('a');
+export const StyledButton = StyledCircleButton("button");
+export const StyledLink = StyledCircleButton("a");
