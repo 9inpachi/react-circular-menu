@@ -15,7 +15,8 @@ export const StyledCircleMenuItem = styled.li<Props>`
   transition: all 0.5s;
 
   ${({ menuActive, rotationAngle, $radius }) =>
-    menuActive && `
+    menuActive &&
+    `
       transform: translateY(-50%) rotate(${rotationAngle}deg)
         translate(${$radius}rem) rotate(${-rotationAngle}deg);
       visibility: visible;
