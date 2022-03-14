@@ -41,9 +41,4 @@ export const StyledTooltip = styled.div<StyleTooltipProps>`
 
 export const StyledTooltipWrapper = styled.div`
   position: relative;
-  display: inline-flex;
-
-  // &:hover > ${StyledTooltip} {
-  //   display: unset;
-  // }
 `;
