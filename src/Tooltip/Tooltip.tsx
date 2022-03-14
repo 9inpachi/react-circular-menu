@@ -1,15 +1,13 @@
 import React, {
   Children,
   cloneElement,
-  CSSProperties,
   FC,
   isValidElement,
-  RefObject,
-  useEffect,
   useRef,
   useState,
 } from "react";
 import { createPortal } from "react-dom";
+import { getTooltipElementProps } from "./functions/tooltip-element-props";
 import { useTooltipTransform } from "./functions/tooltip-transform-hook";
 import { TooltipPlacement } from "./library/types";
 import { StyledTooltipWrapper, StyledTooltip } from "./StyledTooltip";
@@ -41,14 +39,11 @@ export const Tooltip: FC<TooltipProps> = ({
   }
 
   return (
-    <StyledTooltipWrapper
-      ref={wrapperRef}
-      onMouseEnter={openTooltip}
-      onMouseLeave={closeTooltip}
-      onFocus={openTooltip}
-      onBlur={closeTooltip}
-    >
-      {children}
+    <StyledTooltipWrapper ref={wrapperRef}>
+      {cloneElement(
+        Children.only(children),
+        getTooltipElementProps(children.props, openTooltip, closeTooltip)
+      )}
       {isOpen &&
         createPortal(
           <StyledTooltip
