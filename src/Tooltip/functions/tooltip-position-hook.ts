@@ -6,15 +6,13 @@ const tooltipPadding = 5;
 export const useTooltipPosition = (
   wrapper: HTMLDivElement | null,
   tooltip: HTMLDivElement | null,
-  placement: TooltipPlacement
+  placement: TooltipPlacement,
 ) => {
   let styles: CSSProperties = {};
 
   if (!wrapper || !tooltip) {
     return styles;
   }
-
-  console.log(tooltip);
 
   const wrapperBoundingRect = wrapper.getBoundingClientRect();
   const wrapperWidth = wrapperBoundingRect.right - wrapperBoundingRect.left;
@@ -24,8 +22,23 @@ export const useTooltipPosition = (
   const tooltipWidth = tooltipBoundingRect.right - tooltipBoundingRect.left;
   const tooltipHeight = tooltipBoundingRect.bottom - tooltipBoundingRect.top;
 
-  const left = wrapperBoundingRect.left + wrapperWidth / 2 - tooltipWidth / 2;
-  const top = wrapperBoundingRect.top + wrapperHeight / 2 - tooltipHeight / 2;
+  let left = wrapperBoundingRect.left + wrapperWidth / 2 - tooltipWidth / 2;
+  let top = wrapperBoundingRect.top + wrapperHeight / 2 - tooltipHeight / 2;
+
+  switch (placement) {
+    case TooltipPlacement.Top:
+      top = wrapperBoundingRect.top - tooltipHeight - tooltipPadding;
+      break;
+    case TooltipPlacement.Bottom:
+      top = wrapperBoundingRect.bottom + tooltipPadding;
+      break;
+    case TooltipPlacement.Left:
+      left = wrapperBoundingRect.left - tooltipWidth - tooltipPadding;
+      break;
+    case TooltipPlacement.Right:
+      left = wrapperBoundingRect.right + tooltipPadding;
+      break;
+  }
 
   styles = {
     transform: `translate3d(${left}px, ${top}px, 0px)`,

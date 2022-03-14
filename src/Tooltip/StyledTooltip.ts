@@ -6,7 +6,7 @@ interface StyleTooltipProps {
 }
 
 export const StyledTooltip = styled.div<StyleTooltipProps>`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   pointer-events: none;
