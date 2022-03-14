@@ -1,17 +1,15 @@
-import { CSSProperties, RefObject, useEffect } from "react";
+import { CSSProperties } from "react";
 import { TooltipPlacement } from "../library/types";
 
 const tooltipPadding = 5;
 
-export const useTooltipPosition = (
+export const useTooltipTransform = (
   wrapper: HTMLDivElement | null,
   tooltip: HTMLDivElement | null,
-  placement: TooltipPlacement,
-) => {
-  let styles: CSSProperties = {};
-
+  placement: TooltipPlacement
+): CSSProperties => {
   if (!wrapper || !tooltip) {
-    return styles;
+    return {};
   }
 
   const wrapperBoundingRect = wrapper.getBoundingClientRect();
@@ -40,9 +38,7 @@ export const useTooltipPosition = (
       break;
   }
 
-  styles = {
+  return {
     transform: `translate3d(${left}px, ${top}px, 0px)`,
   };
-
-  return styles;
 };

@@ -4,12 +4,13 @@ import React, {
   CSSProperties,
   FC,
   isValidElement,
+  RefObject,
   useEffect,
   useRef,
   useState,
 } from "react";
 import { createPortal } from "react-dom";
-import { useTooltipPosition } from "./functions/tooltip-position-hook";
+import { useTooltipTransform } from "./functions/tooltip-transform-hook";
 import { TooltipPlacement } from "./library/types";
 import { StyledTooltipWrapper, StyledTooltip } from "./StyledTooltip";
 
@@ -24,22 +25,13 @@ export const Tooltip: FC<TooltipProps> = ({
   children,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [tooltip, setTooltip] = useState<HTMLDivElement | null>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const tooltipRef = useRef<HTMLDivElement>(null);
-  const [tooltipElement, setTooltipElement] = useState<HTMLDivElement | null>(
-    null
-  );
-  const tooltipStyles = useTooltipPosition(
+  const tooltipStyles = useTooltipTransform(
     wrapperRef.current,
-    tooltipElement,
+    tooltip,
     placement
   );
-
-  useEffect(() => {
-    if (isOpen && tooltipRef.current) {
-      setTooltipElement(tooltipRef.current);
-    }
-  }, [isOpen, tooltipRef]);
 
   const openTooltip = () => !isOpen && setIsOpen(true);
   const closeTooltip = () => isOpen && setIsOpen(false);
@@ -61,7 +53,7 @@ export const Tooltip: FC<TooltipProps> = ({
         createPortal(
           <StyledTooltip
             style={tooltipStyles}
-            ref={tooltipRef}
+            ref={(element: HTMLDivElement) => element && setTooltip(element)}
             role="tooltip"
             $placement={placement}
           >
