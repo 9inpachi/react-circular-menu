@@ -1,4 +1,15 @@
-import React, { Children, cloneElement, FC, isValidElement } from "react";
+import React, {
+  Children,
+  cloneElement,
+  CSSProperties,
+  FC,
+  isValidElement,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import { createPortal } from "react-dom";
+import { useTooltipPosition } from "./functions/tooltip-position-hook";
 import { TooltipPlacement } from "./library/types";
 import { StyledTooltipWrapper, StyledTooltip } from "./StyledTooltip";
 
@@ -12,16 +23,52 @@ export const Tooltip: FC<TooltipProps> = ({
   placement = TooltipPlacement.Top,
   children,
 }) => {
-  return title && isValidElement(children) ? (
-    <StyledTooltipWrapper>
-      {cloneElement(Children.only(children), {
-        className: (children.props.className ? " " : "") + "tooltip-element",
-      })}
-      <StyledTooltip role="tooltip" $placement={placement}>
-        {title}
-      </StyledTooltip>
+  const [isOpen, setIsOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
+  const [tooltipElement, setTooltipElement] = useState<HTMLDivElement | null>(
+    null
+  );
+  const tooltipStyles = useTooltipPosition(
+    wrapperRef.current,
+    tooltipElement,
+    placement
+  );
+
+  useEffect(() => {
+    if (isOpen && tooltipRef.current) {
+      setTooltipElement(tooltipRef.current);
+    }
+  }, [isOpen, tooltipRef]);
+
+  const openTooltip = () => !isOpen && setIsOpen(true);
+  const closeTooltip = () => isOpen && setIsOpen(false);
+
+  if (!title || !isValidElement(children)) {
+    return <>{children}</>;
+  }
+
+  return (
+    <StyledTooltipWrapper
+      ref={wrapperRef}
+      onMouseEnter={openTooltip}
+      onMouseLeave={closeTooltip}
+      onFocus={openTooltip}
+      onBlur={closeTooltip}
+    >
+      {children}
+      {isOpen &&
+        createPortal(
+          <StyledTooltip
+            style={tooltipStyles}
+            ref={tooltipRef}
+            role="tooltip"
+            $placement={placement}
+          >
+            {title}
+          </StyledTooltip>,
+          document.getElementsByTagName("body")[0]
+        )}
     </StyledTooltipWrapper>
-  ) : (
-    <>{children}</>
   );
 };
