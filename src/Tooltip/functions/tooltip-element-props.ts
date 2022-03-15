@@ -1,26 +1,24 @@
-import { ReactElement } from "react";
+import { DOMAttributes, ReactElement } from "react";
 
-export const getTooltipElementProps = (
+export const getTooltipElementProps = <T>(
   elementProps: ReactElement["props"],
   openTooltip: () => void,
   closeTooltip: () => void
-) => {
-  return {
-    onMouseEnter: () => {
-      elementProps.onMouseEnter?.();
-      openTooltip();
-    },
-    onMouseLeave: () => {
-      elementProps.onMouseLeave?.();
-      closeTooltip();
-    },
-    onFocus: () => {
-      elementProps.onFocus?.();
-      openTooltip();
-    },
-    onBlur: () => {
-      elementProps.onBlur?.();
-      closeTooltip();
-    },
-  };
-};
+): DOMAttributes<T> => ({
+  onMouseEnter: (event) => {
+    openTooltip();
+    elementProps.onMouseEnter?.(event);
+  },
+  onMouseLeave: (event) => {
+    closeTooltip();
+    elementProps.onMouseLeave?.(event);
+  },
+  onFocus: (event) => {
+    openTooltip();
+    elementProps.onFocus?.(event);
+  },
+  onBlur: (event) => {
+    closeTooltip();
+    elementProps.onBlur?.(event);
+  },
+});
