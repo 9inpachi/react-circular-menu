@@ -25,13 +25,11 @@
     "build": "yarn clean && yarn tsc"
   },
   "peerDependencies": {
-    "@material-ui/core": ">= 4",
     "react": ">= 16",
     "react-dom": ">= 16",
     "styled-components": ">= 4"
   },
   "devDependencies": {
-    "@material-ui/core": "^4.12.3",
     "@types/node": "^16.10.1",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.38",
