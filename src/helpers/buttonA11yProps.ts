@@ -1,12 +1,14 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes } from "react";
 
-export const buttonA11yProps = (onClick: () => void): HTMLAttributes<HTMLDivElement> => ({
-  role: 'button',
+export const buttonA11yProps = (
+  onClick: () => void
+): HTMLAttributes<HTMLDivElement> => ({
+  role: "button",
   tabIndex: 0,
   onKeyPress: (keyboardEvent) => {
-    if (['Enter', ' ', 'SpaceBar'].includes(keyboardEvent.key)) {
+    if (["Enter", " ", "SpaceBar"].includes(keyboardEvent.key)) {
       keyboardEvent.preventDefault();
       onClick();
     }
-  }
+  },
 });

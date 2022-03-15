@@ -1,32 +1,34 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface Props {
-  size: number;
+  $size: number;
 }
 
-export const StyledCircleButton = <T extends 'a' | 'div'>(tag: T) => styled(tag) <Props>`
-  border: 0.2em solid #000000;
-  background: none;
+export const StyledCircleButton = <T extends "a" | "button">(tag: T) => styled(
+  tag
+)<Props>`
+  border: 0.2rem solid #000000;
+  background: #ffffff;
   text-decoration: none;
   color: #000000;
   border-radius: 50%;
   cursor: pointer;
-  display: inline-flex;
-  flex-direction: row;
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5em;
+  box-sizing: unset;
+  padding: 0.5rem;
   transition: all 0.5s;
-  ${({ size }) => `
-    width: ${size}em;
-    height: ${size}em;
+  ${({ $size }) => `
+    width: ${$size}rem;
+    height: ${$size}rem;
   `}
 
-  &:hover {
+  &:is(:hover, :focus, :active) {
     color: #ffffff;
     background: #000000;
   }
 `;
 
-export const StyledButton = StyledCircleButton('div');
-export const StyledLink = StyledCircleButton('a');
+export const StyledButton = StyledCircleButton("button");
+export const StyledLink = StyledCircleButton("a");
