@@ -8,7 +8,7 @@ export const StyledCircleButton = <T extends "a" | "button">(tag: T) => styled(
   tag
 )<Props>`
   border: 0.2rem solid #000000;
-  background: none;
+  background: #ffffff;
   text-decoration: none;
   color: #000000;
   border-radius: 50%;
