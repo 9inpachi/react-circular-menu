@@ -22,6 +22,7 @@ interface Props {
 export const StyledCircleMenuToggle = styled(CircleButton)<Props>`
   position: relative;
   flex-direction: column;
+  z-index: 103;
 
   &:is(:hover, :focus, :active) > ${StyledCircleMenuBurgerBar} {
     background: #ffffff;

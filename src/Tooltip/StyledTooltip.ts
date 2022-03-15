@@ -9,7 +9,7 @@ export const StyledTooltip = styled.div`
   border-radius: 0.3rem;
   color: #ffffff;
   padding: 0.25rem 0.5rem 0.3rem 0.5rem;
-  z-index: 102;
+  z-index: 104;
 `;
 
 export const StyledTooltipWrapper = styled.div`
