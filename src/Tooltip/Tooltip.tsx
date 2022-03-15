@@ -50,7 +50,6 @@ export const Tooltip: FC<TooltipProps> = ({
             style={tooltipStyles}
             ref={(element: HTMLDivElement) => element && setTooltip(element)}
             role="tooltip"
-            $placement={placement}
           >
             {title}
           </StyledTooltip>,

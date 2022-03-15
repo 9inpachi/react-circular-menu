@@ -21,4 +21,12 @@ export const getTooltipElementProps = <T>(
     closeTooltip();
     elementProps.onBlur?.(event);
   },
+  onTouchStart: (event) => {
+    openTooltip();
+    elementProps.onTouchStart?.(event);
+  },
+  onTouchEnd: (event) => {
+    closeTooltip();
+    elementProps.onTouchEnd?.(event);
+  },
 });

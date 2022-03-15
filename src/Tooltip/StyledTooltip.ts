@@ -1,11 +1,6 @@
 import styled from "styled-components";
-import { TooltipPlacement } from "./library/types";
 
-interface StyleTooltipProps {
-  $placement?: TooltipPlacement;
-}
-
-export const StyledTooltip = styled.div<StyleTooltipProps>`
+export const StyledTooltip = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +8,7 @@ export const StyledTooltip = styled.div<StyleTooltipProps>`
   background: #000000;
   border-radius: 0.3rem;
   color: #ffffff;
-  padding: 0.25em 0.5em;
+  padding: 0.25rem 0.5rem 0.3rem 0.5rem;
   z-index: 102;
 `;
 

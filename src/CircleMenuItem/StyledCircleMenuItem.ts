@@ -14,6 +14,8 @@ export const StyledCircleMenuItem = styled.li<Props>`
   opacity: 0;
   transition: all 0.5s;
 
+  ${({ menuActive }) => !menuActive && `z-index: -1;`}
+
   ${({ menuActive, rotationAngle, $radius }) =>
     menuActive &&
     `
