@@ -4,13 +4,20 @@
   "description": "Circle menu component for React.",
   "main": "./dist/index",
   "types": "./dist/index",
-  "author": "Fawad Ali",
+  "author": "Fawad Ali <m.fawaadali98@gmail.com>",
   "license": "Apache-2.0",
   "homepage": "https://github.com/9inpachi/react-circular-menu#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/9inpachi/react-circular-menu.git"
   },
+  "keywords": [
+    "react",
+    "circle",
+    "menu",
+    "circular",
+    "list"
+  ],
   "files": [
     "dist"
   ],
