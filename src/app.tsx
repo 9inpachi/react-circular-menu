@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { CircleMenu, CircleMenuItem } from "react-circular-menu";
+import { CircleMenu, CircleMenuItem, TooltipPlacement } from "react-circular-menu";
 import MailIcon from "@material-ui/icons/Mail";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import MapIcon from "@material-ui/icons/Map";
@@ -81,7 +81,7 @@ const App: FC = () => (
           <CircleMenuItem
             onClick={() => alert("Clicked the item")}
             tooltip="Email"
-            tooltipPlacement="right"
+            tooltipPlacement={TooltipPlacement.Right}
           >
             <MailIcon />
           </CircleMenuItem>
