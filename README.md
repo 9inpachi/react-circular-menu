@@ -45,7 +45,7 @@ import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import MapIcon from "@material-ui/icons/Map";
 
 // Import the circular menu
-import { CircleMenu, CircleMenuItem } from "react-circular-menu";
+import { CircleMenu, CircleMenuItem, TooltipPlacement } from "react-circular-menu";
 
 export const TestMenuComponent = (props) => {
   return (
@@ -65,7 +65,7 @@ export const TestMenuComponent = (props) => {
       <CircleMenuItem
         onClick={() => alert("Clicked the item")}
         tooltip="Email"
-        tooltipPlacement="right"
+        tooltipPlacement={TooltipPlacement.Right}
       >
         <MailIcon />
       </CircleMenuItem>
