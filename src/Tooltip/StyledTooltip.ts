@@ -11,7 +11,3 @@ export const StyledTooltip = styled.div`
   padding: 0.25rem 0.5rem 0.3rem 0.5rem;
   z-index: 104;
 `;
-
-export const StyledTooltipWrapper = styled.div`
-  position: relative;
-`;

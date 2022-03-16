@@ -10,7 +10,7 @@ import { createPortal } from "react-dom";
 import { getTooltipElementProps } from "./functions/tooltip-element-props";
 import { useTooltipTransform } from "./functions/tooltip-transform-hook";
 import { TooltipPlacement } from "./library/types";
-import { StyledTooltipWrapper, StyledTooltip } from "./StyledTooltip";
+import { StyledTooltip } from "./StyledTooltip";
 
 export interface TooltipProps {
   title: string;
@@ -39,7 +39,7 @@ export const Tooltip: FC<TooltipProps> = ({
   }
 
   return (
-    <StyledTooltipWrapper ref={wrapperRef}>
+    <div ref={wrapperRef}>
       {cloneElement(
         Children.only(children),
         getTooltipElementProps(children.props, openTooltip, closeTooltip)
@@ -55,6 +55,6 @@ export const Tooltip: FC<TooltipProps> = ({
           </StyledTooltip>,
           document.getElementsByTagName("body")[0]
         )}
-    </StyledTooltipWrapper>
+    </div>
   );
 };
