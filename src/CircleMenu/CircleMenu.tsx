@@ -45,7 +45,12 @@ export const CircleMenu: FC<Props> = ({
   };
 
   const menuToggle = menuToggleElement ? (
-    cloneElement(menuToggleElement, { onClick: toggleMenu })
+    cloneElement(menuToggleElement, {
+      onClick: () => {
+        menuToggleElement.props.onClick?.();
+        toggleMenu();
+      }
+    })
   ) : (
     <CircleMenuToggle
       className={menuToggleClassName}

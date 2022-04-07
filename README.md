@@ -142,6 +142,8 @@ Example: `testClass`
 
 Custom element for the menu toggle.
 
+**NOTE: The element must have an `onClick` prop. The prop doesn't need to be specified but it should exist.**
+
 Example: `<button>Toggle Menu</button>`
 
 #### `menuToggleClassName?: string`
