@@ -3,6 +3,7 @@ import React, {
   cloneElement,
   FC,
   ReactElement,
+  ReactNode,
   useState,
 } from "react";
 import { Backdrop } from "../Backdrop/Backdrop";
@@ -23,6 +24,7 @@ interface Props {
   menuToggleElement?: ReactElement;
   menuToggleClassName?: string;
   onMenuToggle?: (toggleState: boolean) => void;
+  children: ReactNode;
 }
 
 export const CircleMenu: FC<Props> = ({
@@ -49,7 +51,7 @@ export const CircleMenu: FC<Props> = ({
       onClick: () => {
         menuToggleElement.props.onClick?.();
         toggleMenu();
-      }
+      },
     })
   ) : (
     <CircleMenuToggle

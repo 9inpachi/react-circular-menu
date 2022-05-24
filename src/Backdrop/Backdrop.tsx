@@ -1,10 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import { StyledBackdrop, StyledBackdropFocus } from "./StyledBackdrop";
 
 export interface BackdropProps {
   className?: string;
   active: boolean;
   onClick: () => void;
+  children: ReactNode;
 }
 
 export const Backdrop: FC<BackdropProps> = (props) => (

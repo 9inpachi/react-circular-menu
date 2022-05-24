@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, MouseEvent } from "react";
+import React, { CSSProperties, FC, MouseEvent, ReactNode } from "react";
 import { TooltipPlacement } from "../Tooltip/library/types";
 import { StyledButton, StyledLink } from "./StyledCircleButton";
 
@@ -11,6 +11,7 @@ export interface CircleButtonProps {
   className?: string;
   style?: CSSProperties;
   onClick?: (e?: MouseEvent<HTMLElement>) => void;
+  children: ReactNode;
 }
 
 export const CircleButton: FC<CircleButtonProps> = (props) => {

@@ -3,6 +3,7 @@ import React, {
   cloneElement,
   FC,
   isValidElement,
+  ReactNode,
   useRef,
   useState,
 } from "react";
@@ -15,6 +16,7 @@ import { StyledTooltip } from "./StyledTooltip";
 export interface TooltipProps {
   title: string;
   placement?: TooltipPlacement;
+  children: ReactNode;
 }
 
 export const Tooltip: FC<TooltipProps> = ({
@@ -40,21 +42,23 @@ export const Tooltip: FC<TooltipProps> = ({
 
   return (
     <div ref={wrapperRef}>
-      {cloneElement(
-        Children.only(children),
-        getTooltipElementProps(children.props, openTooltip, closeTooltip)
-      )}
-      {isOpen &&
-        createPortal(
-          <StyledTooltip
-            style={tooltipStyles}
-            ref={(element: HTMLDivElement) => element && setTooltip(element)}
-            role="tooltip"
-          >
-            {title}
-          </StyledTooltip>,
-          document.getElementsByTagName("body")[0]
+      <>
+        {cloneElement(
+          Children.only(children),
+          getTooltipElementProps(children.props, openTooltip, closeTooltip)
         )}
+        {isOpen &&
+          createPortal(
+            <StyledTooltip
+              style={tooltipStyles}
+              ref={(element: HTMLDivElement) => element && setTooltip(element)}
+              role="tooltip"
+            >
+              {title}
+            </StyledTooltip>,
+            document.getElementsByTagName("body")[0]
+          )}
+      </>
     </div>
   );
 };

@@ -45,7 +45,11 @@ import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import MapIcon from "@material-ui/icons/Map";
 
 // Import the circular menu
-import { CircleMenu, CircleMenuItem, TooltipPlacement } from "react-circular-menu";
+import {
+  CircleMenu,
+  CircleMenuItem,
+  TooltipPlacement,
+} from "react-circular-menu";
 
 export const TestMenuComponent = (props) => {
   return (
@@ -101,6 +105,7 @@ All angles are in degrees.
 - [`menuToggleElement?: ReactElement`](#menutoggleelement-reactelement)
 - [`menuToggleClassName?: string`](#menutoggleclassname-string)
 - [`onMenuToggle?: (menuActive: boolean) => void`](#onmenutoggle-menuactive-boolean--void)
+- [`children: ReactNode`](#children-reactnode)
 
 #### `startAngle: number`
 
@@ -162,6 +167,10 @@ Example:
 (menuActive) => console.log(menuActive);
 ```
 
+#### `children: ReactNode`
+
+Children of the menu.
+
 ### CircleMenuItem
 
 - [`size?: number`](#size-number)
@@ -173,6 +182,7 @@ Example:
 - [`onClick?: (event: MouseEvent) => void`](#onclick-event-mouseevent--void)
 - [`radius?: number`](#radius-number-1)
 - [`menuActive?: boolean`](#menuactive-boolean)
+- [`children: ReactNode`](#children-reactnode-1)
 
 #### `size?: number`
 
@@ -237,3 +247,7 @@ Example: `true`
 Rotation angle in degrees of the menu item from the `startAngle` of `CircleMenu`. Set by `CircleMenu` component.
 
 Example: `90`
+
+#### `children: ReactNode`
+
+Children of the menu.
