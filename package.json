@@ -2,8 +2,6 @@
   "name": "react-circular-menu",
   "version": "2.3.9",
   "description": "Circle menu component for React.",
-  "main": "./dist/index",
-  "types": "./dist/index",
   "author": "Fawad Ali <m.fawaadali98@gmail.com>",
   "license": "Apache-2.0",
   "homepage": "https://github.com/9inpachi/react-circular-menu#readme",
@@ -24,12 +22,25 @@
   "bugs": {
     "url": "https://github.com/9inpachi/react-circular-menu/issues"
   },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
   "scripts": {
     "clean": "rm -rf ./dist",
     "tsc": "tsc",
     "prepublishOnly": "yarn build",
     "dev": "yarn clean && tsc --watch",
-    "build": "yarn clean && yarn tsc"
+    "build": "yarn clean && yarn build:cjs && yarn build:esm && yarn build:types",
+    "build:cjs": "yarn tsc --module commonjs --outDir ./dist/cjs/ --declaration false",
+    "build:esm": "yarn tsc --module es6 --outDir ./dist/esm/ --declaration false",
+    "build:types": "yarn tsc --emitDeclarationOnly true --declarationDir ./dist/types"
   },
   "peerDependencies": {
     "react": ">= 16",
