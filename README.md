@@ -105,6 +105,7 @@ All angles are in degrees.
 - [`menuToggleElement?: ReactElement`](#menutoggleelement-reactelement)
 - [`menuToggleClassName?: string`](#menutoggleclassname-string)
 - [`onMenuToggle?: (menuActive: boolean) => void`](#onmenutoggle-menuactive-boolean--void)
+- [`open?: boolean`](#open-boolean)
 - [`children: ReactNode`](#children-reactnode)
 
 #### `startAngle: number`
@@ -166,6 +167,12 @@ Example:
 ```js
 (menuActive) => console.log(menuActive);
 ```
+
+#### `open?: boolean`
+
+Defines if the menu is open or not. This can be used the control the menu's toggle state from parent.
+
+Example: `false`
 
 #### `children: ReactNode`
 

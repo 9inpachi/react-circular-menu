@@ -4,6 +4,7 @@ import React, {
   FC,
   ReactElement,
   ReactNode,
+  useEffect,
   useState,
 } from "react";
 import { Backdrop } from "../Backdrop/Backdrop";
@@ -24,6 +25,7 @@ interface Props {
   menuToggleElement?: ReactElement;
   menuToggleClassName?: string;
   onMenuToggle?: (toggleState: boolean) => void;
+  open?: boolean
   children: ReactNode;
 }
 
@@ -35,11 +37,15 @@ export const CircleMenu: FC<Props> = ({
   menuToggleElement,
   menuToggleClassName,
   onMenuToggle,
+  open,
   ...props
 }) => {
-  const [menuActive, setMenuActive] = useState<boolean>(false);
+  const [menuActive, setMenuActive] = useState<boolean>(open ?? false);
   const childrenCount = Children.count(props.children);
   const itemCount = rotationAngleInclusive ? childrenCount - 1 : childrenCount;
+
+  useEffect(() => setMenuActive(open ?? false), [open]);
+
   const toggleMenu = () => {
     const updatedMenuState = !menuActive;
     setMenuActive(updatedMenuState);
