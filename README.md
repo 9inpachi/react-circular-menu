@@ -170,7 +170,7 @@ Example:
 
 #### `open?: boolean`
 
-Defines if the menu is open or not. This can be used the control the menu's toggle state from parent.
+Whether the menu is open or not. This can be used to control the menu's toggle state from the parent component.
 
 Example: `false`
 
