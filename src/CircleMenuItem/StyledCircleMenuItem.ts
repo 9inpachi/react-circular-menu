@@ -9,7 +9,8 @@ interface Props {
 export const StyledCircleMenuItem = styled.li<Props>`
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   visibility: hidden;
   opacity: 0;
   transition: all 0.5s;
@@ -18,7 +19,7 @@ export const StyledCircleMenuItem = styled.li<Props>`
   ${({ menuActive, rotationAngle, $radius }) =>
     menuActive &&
     `
-      transform: translateY(-50%) rotate(${rotationAngle}deg)
+      transform: translate(-50%, -50%) rotate(${rotationAngle}deg)
         translate(${$radius}rem) rotate(${-rotationAngle}deg);
       visibility: visible;
       opacity: 1;
