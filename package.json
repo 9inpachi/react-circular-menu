@@ -1,6 +1,6 @@
 {
   "name": "react-circular-menu",
-  "version": "2.4.3",
+  "version": "2.4.4",
   "description": "Circle menu component for React.",
   "author": "Fawad Ali <m.fawaadali98@gmail.com>",
   "license": "Apache-2.0",
@@ -48,9 +48,9 @@
     "styled-components": ">= 4"
   },
   "devDependencies": {
-    "@types/node": "^20.7.0",
+    "@types/node": "^20.7.1",
     "@types/react": "^18.2.23",
-    "@types/react-dom": "^18.2.7",
+    "@types/react-dom": "^18.2.8",
     "@types/styled-components": "^5.1.28",
     "prettier": "^3.0.3",
     "styled-components": "^6.0.8",
