@@ -8685,10 +8685,10 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
-react-circular-menu@^2.4.8:
-  version "2.4.8"
-  resolved "https://registry.yarnpkg.com/react-circular-menu/-/react-circular-menu-2.4.8.tgz#8a06690bd2293cac9984b17f00aaacf16fbdadab"
-  integrity sha512-rmBETH7HeeHCAM3vQgTh7TWTQrRfKPnPOnez0gA1R9uGwQR/9T01RKXNKwAfBsvOVwJvejVLwxK2mWjiBoQ1Ug==
+react-circular-menu@^2.4.10:
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/react-circular-menu/-/react-circular-menu-2.4.10.tgz#3437f34a3ab97ba3c8c7467e991da31e5561a617"
+  integrity sha512-7gghqjdJzUEbjx3IlGm01WopB3mcVrL2vzEkHRNq54tVN9XvJRzqMo+H6G0fhgIJH8xvtvOhw5fWkKjHUFLUyA==
 
 react-dev-utils@^12.0.1:
   version "12.0.1"
