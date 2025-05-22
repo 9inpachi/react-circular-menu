@@ -27,10 +27,10 @@
     "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
 
-"@types/node@^22.13.4":
-  version "22.14.1"
-  resolved "https://registry.npmjs.org/@types/node/-/node-22.14.1.tgz#53b54585cec81c21eee3697521e31312d6ca1e6f"
-  integrity sha512-u0HuPQwe/dHrItgHHpmw3N2fYCR6x4ivMNbPHRkBVP4CvN+kiRrKHWk3i8tXiO/joPwXLMYvF9TTF0eqgHIuOw==
+"@types/node@^22.15.21":
+  version "22.15.21"
+  resolved "https://registry.npmjs.org/@types/node/-/node-22.15.21.tgz#196ef14fe20d87f7caf1e7b39832767f9a995b77"
+  integrity sha512-EV/37Td6c+MgKAbkcLG6vqZ2zEYHD7bvSrzqqs2RIhbA6w3x+Dqz8MZM3sP6kGTeLrdoOgKZe+Xja7tUB2DNkQ==
   dependencies:
     undici-types "~6.21.0"
 
@@ -40,9 +40,9 @@
   integrity sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==
 
 "@types/react-dom@^18.3.1":
-  version "18.3.6"
-  resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.3.6.tgz#fa59a5e9a33499a792af6c1130f55921ef49d268"
-  integrity sha512-nf22//wEbKXusP6E9pfOCDwFdHAX4u172eaJI4YkDRQEZiorm6KfYnSC2SWLDMVWUOWPERmJnN0ujeAfTBLvrw==
+  version "18.3.7"
+  resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.3.7.tgz#b89ddf2cd83b4feafcc4e2ea41afdfb95a0d194f"
+  integrity sha512-MEe3UeoENYVFXzoXEWsvcpg6ZvlrFNlOQ7EOsvhI3CfAXwzPfO8Qwuxd40nepsYKqyyVQnTdEfv68q91yLcKrQ==
 
 "@types/react@*":
   version "19.0.2"
@@ -52,9 +52,9 @@
     csstype "^3.0.2"
 
 "@types/react@^18.3.12":
-  version "18.3.20"
-  resolved "https://registry.npmjs.org/@types/react/-/react-18.3.20.tgz#b0dccda9d2f1bc24d2a04b1d0cb5d0b9a3576ad3"
-  integrity sha512-IPaCZN7PShZK/3t6Q87pfTkRm6oLTd4vztyoj+cbHUF1g3FfVb2tFIL79uCRKEfv16AhqDMBywP2VW3KIZUvcg==
+  version "18.3.22"
+  resolved "https://registry.npmjs.org/@types/react/-/react-18.3.22.tgz#19b77d6e4957c43070c297e638c6a1c43079e234"
+  integrity sha512-vUhG0YmQZ7kL/tmKLrD3g5zXbXXreZXB3pmROW8bg3CnLnpjkRVwUlLne7Ufa2r9yJ8+/6B73RzhAek5TBKh2Q==
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
@@ -148,10 +148,10 @@ source-map-js@^1.2.1:
   resolved "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz#1ce5650fddd87abc099eda37dcff024c2667ae46"
   integrity sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==
 
-styled-components@^6.1.15:
-  version "6.1.17"
-  resolved "https://registry.npmjs.org/styled-components/-/styled-components-6.1.17.tgz#59032edd7efa59e114ddbc41165f0984d0fa4fb7"
-  integrity sha512-97D7DwWanI7nN24v0D4SvbfjLE9656umNSJZkBkDIWL37aZqG/wRQ+Y9pWtXyBIM/NSfcBzHLErEsqHmJNSVUg==
+styled-components@^6.1.18:
+  version "6.1.18"
+  resolved "https://registry.npmjs.org/styled-components/-/styled-components-6.1.18.tgz#9647497a92326ba9d758051c914f15004d524bb9"
+  integrity sha512-Mvf3gJFzZCkhjY2Y/Fx9z1m3dxbza0uI9H1CbNZm/jSHCojzJhQ0R7bByrlFJINnMzz/gPulpoFFGymNwrsMcw==
   dependencies:
     "@emotion/is-prop-valid" "1.2.2"
     "@emotion/unitless" "0.8.1"
