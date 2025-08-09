@@ -22,10 +22,10 @@ interface Props {
   radius?: number;
   itemSize?: number;
   className?: string;
-  menuToggleElement?: ReactElement;
+  menuToggleElement?: ReactElement<{ onClick: () => void }>;
   menuToggleClassName?: string;
   onMenuToggle?: (toggleState: boolean) => void;
-  open?: boolean
+  open?: boolean;
   children: ReactNode;
 }
 
@@ -55,7 +55,7 @@ export const CircleMenu: FC<Props> = ({
   const menuToggle = menuToggleElement ? (
     cloneElement(menuToggleElement, {
       onClick: () => {
-        menuToggleElement.props.onClick?.();
+        menuToggleElement.props?.onClick?.();
         toggleMenu();
       },
     })

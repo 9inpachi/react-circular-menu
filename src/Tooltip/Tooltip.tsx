@@ -1,6 +1,7 @@
 import React, {
   Children,
   cloneElement,
+  DOMAttributes,
   FC,
   isValidElement,
   ReactNode,
@@ -45,7 +46,11 @@ export const Tooltip: FC<TooltipProps> = ({
       <>
         {cloneElement(
           Children.only(children),
-          getTooltipElementProps(children.props, openTooltip, closeTooltip)
+          getTooltipElementProps(
+            children.props as DOMAttributes<unknown>,
+            openTooltip,
+            closeTooltip
+          )
         )}
         {isOpen &&
           createPortal(
